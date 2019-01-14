@@ -1,5 +1,4 @@
 FROM viossat/keeweb:latest
-MAINTAINER Mathieu Viossat <mathieu@viossat.fr>
 
 RUN apk add --no-cache \
 	apache2-utils \
