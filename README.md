@@ -7,7 +7,7 @@ This image supports WebDAV, this makes possible to store/sync password files on 
 
 Note: Over WebDAV, KeeWeb can update files but can't currently create them, the files must exist.
 
-- Alpine-based, 12.8 MB
+- Alpine-based
 - no TLS support, reverse proxy with TLS recommended
 
 ## Usage
@@ -23,4 +23,3 @@ URL: https://example.com/webdav/filenanme
 Username: webdav
 Password: secret
 ```
-
