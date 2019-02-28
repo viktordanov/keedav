@@ -1,6 +1,6 @@
 # p0tter/keedav
 
-Free cross-platform password manager compatible with KeePass. https://keeweb.info/
+Free cross-platform password manager compatible with KeeWeb (https://keeweb.info).
 
 This image supports WebDAV, this makes possible to store/sync password files on the same container.
 
@@ -38,8 +38,6 @@ version: "3"
 services:
   keeweb:
     image: p0tter/keedav:1.2
-    expose:
-      - "80"
     restart: always
     environment:
       - WEBDAV_USERNAME=webdav
