@@ -39,6 +39,8 @@ services:
   keeweb:
     image: p0tter/keedav:1.2
     restart: always
+    ports:
+      - "80:80"
     environment:
       - WEBDAV_USERNAME=webdav
       - WEBDAV_PASSWORD=secret
@@ -54,8 +56,8 @@ services:
   keeweb:
     image: p0tter/keedav:1.2
     restart: always
-    expose:
-      - "443"
+    ports:
+      - "443:443"
     environment:
       - WEBDAV_USERNAME=webdav
       - WEBDAV_PASSWORD=secret
@@ -71,9 +73,9 @@ version: "3"
 services:
   keeweb:
     image: p0tter/keedav:1.2
-    expose:
-      - "443"
     restart: always
+    ports:
+      - "443:443"
     environment:
       - WEBDAV_USERNAME=webdav
       - WEBDAV_PASSWORD=secret
