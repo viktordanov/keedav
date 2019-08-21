@@ -72,7 +72,7 @@ version: "3"
 
 services:
   keeweb:
-    image: p0tter/keedav:1.2
+    image: p0tter/keedav:1.3
     restart: always
     ports:
       - "443:443"
