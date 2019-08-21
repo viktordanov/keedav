@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.10.2
 
 ENV WWW_ROOT=/var/www/html \
         CONF_PATH=/etc/lighttpd/conf.d \
