@@ -13,16 +13,16 @@ Note: Over WebDAV, KeeWeb can update files but can't currently create them, the 
 ### Without TLS (HTTP)
 First, start KeeWeb (`/my/password-files` must contain the password file):
 ```bash
-docker run -d -p 80:80 -e WEBDAV_USERNAME=webdav -e WEBDAV_PASSWORD=secret -v /my/password-files:/var/www/html/webdav p0tter/keedav:1.2
+docker run -d -p 80:80 -e WEBDAV_USERNAME=webdav -e WEBDAV_PASSWORD=secret -v /my/password-files:/var/www/html/webdav p0tter/keedav:1.3
 ```
 ### With TLS (HTTPS)
 The container will automatically generate the file `/etc/lighttpd/ssl.pem` for lighttpd from the given `ssl.key` and `ssl.crt` file:
 ```bash
-docker run -d -p 443:443 -e WEBDAV_USERNAME=webdav -e WEBDAV_PASSWORD=secret -v /my/ssl.key:/certs/ssl.key:ro -v /my/ssl.crt:/certs/ssl.crt:ro -v /my/password-files:/var/www/html/webdav p0tter/keedav:1.2
+docker run -d -p 443:443 -e WEBDAV_USERNAME=webdav -e WEBDAV_PASSWORD=secret -v /my/ssl.key:/certs/ssl.key:ro -v /my/ssl.crt:/certs/ssl.crt:ro -v /my/password-files:/var/www/html/webdav p0tter/keedav:1.3
 ```
 Alternatively you can use an already generated `ssl.pem` file:
 ```bash
-docker run -d -p 443:443 -e WEBDAV_USERNAME=webdav -e WEBDAV_PASSWORD=secret -v /my/ssl.pem:/etc/lighttpd/ssl.pem:ro -v /my/password-files:/var/www/html/webdav p0tter/keedav:1.2
+docker run -d -p 443:443 -e WEBDAV_USERNAME=webdav -e WEBDAV_PASSWORD=secret -v /my/ssl.pem:/etc/lighttpd/ssl.pem:ro -v /my/password-files:/var/www/html/webdav p0tter/keedav:1.3
 ```
 Then, go to KeeWeb through your browser, click on `More`, click on `WebDAV` and enter your configuration:
 ```
@@ -37,7 +37,7 @@ version: "3"
 
 services:
   keeweb:
-    image: p0tter/keedav:1.2
+    image: p0tter/keedav:1.3
     restart: always
     ports:
       - "80:80"
@@ -54,7 +54,7 @@ version: "3"
 
 services:
   keeweb:
-    image: p0tter/keedav:1.2
+    image: p0tter/keedav:1.3
     restart: always
     ports:
       - "443:443"
@@ -72,7 +72,7 @@ version: "3"
 
 services:
   keeweb:
-    image: p0tter/keedav:1.2
+    image: p0tter/keedav:1.3
     restart: always
     ports:
       - "443:443"
